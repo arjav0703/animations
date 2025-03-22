@@ -17,7 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             start: "top 90%",
             end: "top 50%",
-            scrub: 2,
+            scrub: 1,
+        }
+    });
+
+    gsap.from("#p3 #Box", {
+        x: 300,
+        duration: 1,
+
+        scrollTrigger: {
+            trigger: "#p3 #Box",
+            scroller:'body',
+            markers:true,
+
+            start: "top 90%",
+            end: "top 50%",
+            scrub: 0.5,
         }
     });
 });
