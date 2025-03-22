@@ -30,15 +30,15 @@ body {
 }
 
 #p1 {
-    background: rgb(89, 89, 206);
+    background: rgb(40, 40, 83);
 }
 #p2 {
-    background: rgb(206, 198, 89);
+    background: rgb(75, 72, 39);
 }
 #p3 {
-    background: rgb(206, 89, 128);
+    background: rgb(80, 43, 55);
 }
 #p3 {
     display: flex;
-    background: rgb(89, 206, 107);
+    background: rgb(46, 74, 50);
 }   
