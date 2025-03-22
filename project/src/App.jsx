@@ -7,7 +7,7 @@ export default function App() {
     <>
       <div className='bg-black text-white w-full min-h-screen'>
         <Canvas startIndex={0}/>
-        <Canvas startIndex={150}/>
+        <Canvas startIndex={750}/>
       </div>
     </>
   )
