@@ -5,14 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    gsap.to("#p2 #Box", {
-        rotate:60,
+    gsap.from("#p2 #Box", {
+        rotate: 360,
+        scale: 0,
         duration: 1,
 
         scrollTrigger: {
             trigger: "#p2 #Box",
-            start: "top center",
-            end: "bottom center",
+            scroller:'body',
+            markers:true,
+
+            start: "top 90%",
+            end: "top 50%",
+            scrub: 2,
         }
     });
 });
