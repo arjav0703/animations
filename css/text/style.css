@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 body {
@@ -11,4 +11,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+}
+
+#hello::before {
+    content: 'Hello'
+}
+
+#hello::after {
+    content: ', I am Arjav'
 }
