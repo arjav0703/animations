@@ -13,3 +13,18 @@ body {
     padding: 0;
 }
 
+#box {
+    position: absolute;
+    animation-name: res;
+    animation-duration: 3s;
+}
+
+@keyframes res {
+    from {
+        left:10px;
+    }
+    to {
+        left: 40%;
+        rotate: 360deg;
+    }
+}
