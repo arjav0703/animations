@@ -261,7 +261,7 @@ export default [
             duration: 3,
             size: 157,
             top: 97,
-            left: 90,
+            left: 70,
             zIndex: 0,
         },
         {
