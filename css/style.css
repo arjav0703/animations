@@ -14,17 +14,32 @@ body {
 }
 
 #box {
-    position: absolute;
+    position: relative;
     animation-name: res;
-    animation-duration: 3s;
+    animation-duration: 2s;
+    animation-delay: 100ms;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate;
+    left:40%;
+    top: 40%;
 }
 
 @keyframes res {
-    from {
-        left:10px;
+    0% {}
+    25%{
+        left :60%;
+        top: 40%;
     }
-    to {
+    50%{
+        left: 60%;
+        top: 60%;
+    }
+    75% {
         left: 40%;
-        rotate: 360deg;
+        top: 60%;
+    }
+    100% {
+        left: 40%;
+        top: 40%;
     }
 }
