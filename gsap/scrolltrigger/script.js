@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             start: "top 90%",
             end: "top 50%",
-            scrub: 1,
+            scrub: 1, // this smoothens the scroll
         }
     });
 
@@ -30,9 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
             scroller:'body',
             markers:true,
 
-            start: "top 90%",
-            end: "top 50%",
+            start: "top 40%",
+            end: "top 20%",
             scrub: 0.5,
+            pin: true // this pins the element and when you scroll, it moves with the scroll. 
         }
     });
 });

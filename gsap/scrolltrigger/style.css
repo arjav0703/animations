@@ -39,5 +39,6 @@ body {
     background: rgb(206, 89, 128);
 }
 #p3 {
+    display: flex;
     background: rgb(89, 206, 107);
-}
+}   
