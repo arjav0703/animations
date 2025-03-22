@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    gsap.from("#Rec", {
+    gsap.to("#Fast", {
         x: 700,
-        duration: 2,
-        repeat: Infinity,
+        duration: 1.2,
         yoyo: true,
-        ease: 'bounce',
+        repeat:-1,
     });
-    gsap.to("#Box", {
-        y: 500,
-        delay:1,
-        duration: 2,
-        ease: 'bounce',
-        backgroundColor: 'red',
-        borderRadius: '50%',
-        scale: 0.5,
-        rotation: 360,
+
+    gsap.to("#Faster", {
+        x: 700,
+        duration: 1,
+        yoyo: true,
+        repeat:-1,
+    });
+
+    gsap.to("#Fastest", {
+        x: 700,
+        duration: 0.8,
+        yoyo: true,
+        repeat:-1,
     });
 });
