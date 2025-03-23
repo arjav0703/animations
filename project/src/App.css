@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+#main {
+    /* background-color: #FD2C2A; */
+}
+
+* {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.para {
+    font-weight: 350;
+}
+
+canvas {
+    pointer-events: none;
+}
+
+span.growing {
+    background-color: #FD2C2A;
+}
