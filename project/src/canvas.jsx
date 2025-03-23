@@ -48,9 +48,9 @@ export function Canvas({details}) {
     <>
       <canvas
         data-scroll
-        data-scroll-speed={Math.random().toFixed(2)}
+        data-scroll-speed={Math.random().toFixed(1)}
         ref={canvasRef}
-        style={{width: `${size * 1.8}px`, height: `${size * 1.8}px`, top: `${top}%`, left: `${left}%`, zIndex: `${zIndex}`, position:"absolute"}}
+        style={{width: `${size * 1.4}px`, height: `${size * 1.4}px`, top: `${top}%`, left: `${left}%`, zIndex: `${zIndex}`, position:"absolute"}}
         id="canvas"
       >
       </canvas>
