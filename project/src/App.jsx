@@ -21,12 +21,24 @@ export default function App() {
       <script src="https://c.webfontfree.com/c.js?f=HelveticaNowDisplay-Regular" type="text/javascript"></script>
       <div data-scroll-container id='main' >
 
-        <MyNav/>
-        <div className='w-full min-h-screen relative'>
+        {/* <div className='w-full min-h-screen relative'>
           {data[0].map((canasdets, index) => (
               <Canvas details={canasdets} key={index}/>
           ))}
+        </div> */}
+
+      <section className="w-full z-[1]">
+        <MyNav />
+        <div className='w-[25%]  mx-[20%] leading-12 mt-10'>
+          <h2 className='text-4xl'>
+            At Thirtysixstudio, we build digital assets and immersive experiences for purposeful brands.
+          </h2>
+          <p className='text-md leading-4 mt-10 para'>
+            We're a boutique production studio focused on design, animation, and technology, constantly rethinking what digital craft can do for present-day ads and campaigns.
+          </p>
+          
         </div>
+      </section>
 
       </div>  
     </>
