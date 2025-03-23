@@ -5,7 +5,7 @@ import data from './data'
 import LocomotiveScroll from 'locomotive-scroll';
 import MyNav from './components/MyNav';
 import gsap from 'gsap'
-
+const circEase = 'circ.inOut';
 
 export default function App() {
   const [showCanvas, setShowCanvas] = useState(false)
@@ -32,13 +32,13 @@ export default function App() {
             color: "#000",
             backgroundColor: "#fd2c2a",
             duration: 1.2,
-            ease: "power2.inOut",
+            ease: circEase,
           });
 
           gsap.to(growingSpan.current, {
             scale: 1000,
             duration: 2,
-            ease: "power2.inOut",
+            ease: circEase,
             onComplete: () => {
               gsap.set(growingSpan.current, {
                 scale: 0,
