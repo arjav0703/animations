@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import { Canvas } from './canvas'
 import data from './data'
@@ -9,14 +9,20 @@ import MyNav from './components/MyNav';
 
 export default function App() {
   
-  const [showCanvs, setShowCanvs] = useState(false)
+  const [showCanvas, setShowCanvs] = useState(false)
+  const canvastoggle = useRef(null)
 
   useEffect(() => {
     const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true
-    });
-  }, [])
+    }, []);
+    
+    canvastoggle.current.addEventListener('click', () => {
+      setShowCanvs(!showCanvas)
+    })
+  }
+  ,[showCanvas]);
 
   const pages = [0,1,2]
   return(
@@ -37,14 +43,14 @@ export default function App() {
           </section>
 
           <section className='text-center mt-18 relative bottom-0 left-0'>
-            <h1 className="text-[12rem] tracking-tight leading-none">Thirtysixstudios</h1>
+            <h1 ref={canvastoggle} className="text-[12rem] tracking-tight leading-none">Thirtysixstudios</h1>
           </section>
         </div>
 
       </section>
 
         <div className='w-full min-h-screen relative'>
-          {showCanvs && data[0].map((canasdets, index) => (
+          {showCanvas && data[0].map((canasdets, index) => (
               <Canvas details={canasdets} key={index}/>
           ))}
         </div>
@@ -69,7 +75,7 @@ export default function App() {
               alt="image of a person with virtual reality glasses"
             />
           </section>
-          {showCanvs && data[1].map((canasdets, index) => (
+          {showCanvas && data[1].map((canasdets, index) => (
               <Canvas details={canasdets} key={index}/>
           ))}
         </div>
