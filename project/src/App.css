@@ -13,3 +13,7 @@
 .para {
     font-weight: 350;
 }
+
+canvas {
+    pointer-events: none;
+}

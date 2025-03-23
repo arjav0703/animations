@@ -21,7 +21,7 @@ export default function App() {
       
       <div data-scroll-container id='main' >
 
-      <section className="w-full z-[1]">
+      <section className="w-full z-[1] ">
         <MyNav />
         <div className='w-full top-[15%] absolute z-99'>
           <section className='w-[25%] mx-[20%] leading-12'>
@@ -48,7 +48,33 @@ export default function App() {
 
       
 
-      </div>  
+      </div> 
+      
+      <div data-scroll-container id='main' >
+
+        <div className='w-full min-h-screen relative z[1]'>
+          <section className='w-screen px-32 pt-1 '>
+            <h1 className='text-7xl'>
+              About the brand
+            </h1>
+            <p className='text-2xl mt-8 para'>
+              Thirtysixstudios is a digital production studio that builds digital assets and immersive experiences for purposeful brands. We're a boutique production studio focused on design, animation, and technology, constantly rethinking what digital craft can do for present-day ads and campaigns.
+            </p>
+            <img
+              className="w-[70%] mt-10"
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fbeauty-digital-art-through-immersive-experiences_23-2151250278.jpg"
+              alt="image of a person with virtual reality glasses"
+            />
+          </section>
+          {data[1].map((canasdets, index) => (
+              <Canvas details={canasdets} key={index}/>
+          ))}
+        </div>
+
+      
+
+      </div> 
+      
     </>
   )
 }
