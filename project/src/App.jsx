@@ -12,13 +12,35 @@ export default function App() {
   const canvastoggle = useRef(null)
   const growingSpan = useRef(null)
 
+  useEffect(() => {
+    const scrollContainer = document.querySelector('[data-scroll-container]');
+    let scroll;
 
+    const initializeScroll = () => {
+      if (scroll) {
+        scroll.destroy(); // Destroy any existing instance to avoid duplication
+      }
+      scroll = new LocomotiveScroll({
+        el: scrollContainer,
+        smooth: true,
+      });
+    };
+
+    // Initialize LocomotiveScroll after a slight delay to ensure DOM is ready
+    const timeout = setTimeout(() => {
+      initializeScroll();
+    }, 100);
+
+    // Reinitialize LocomotiveScroll whenever `showCanvas` changes
+    return () => {
+      clearTimeout(timeout);
+      if (scroll) {
+        scroll.destroy();
+      }
+    };
+  }, [showCanvas]);
 
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true
-    });
     const handleClick = (cl) => {
       setShowCanvas((prevShowCanvas) => {
         if (!prevShowCanvas) {
@@ -61,11 +83,10 @@ export default function App() {
     const headingElement = canvastoggle.current;
     headingElement.addEventListener("click", handleClick);
 
-    // Clean up event listener and destroy locomotive scroll instance on unmount
+    // Clean up event listener
     return () => {
       headingElement.removeEventListener("click", handleClick);
-      scroll.destroy();
-    };
+    };    
   }, []);
 
   const pages = [0,1,2]
