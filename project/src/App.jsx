@@ -13,10 +13,10 @@ export default function App() {
   const growingSpan = useRef(null)
 
   useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll({
+    const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true
-    });
+  });
   }, []);
 
   useEffect(() => {
