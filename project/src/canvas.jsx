@@ -26,6 +26,13 @@ export function Canvas({details}) {
     //   repeat: -1,
     //   yoyo: true
     // });
+
+    gsap.from(canvasRef.current, {
+      opacity: 0,
+      duration: 2,
+      delay: 0.2,
+      ease: 'power2.inOut'
+    })
   })
   
   useEffect(() => {
