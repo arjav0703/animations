@@ -3,6 +3,7 @@ import './App.css'
 import { Canvas } from './canvas'
 import data from './data'
 import LocomotiveScroll from 'locomotive-scroll';
+import MyNav from './components/MyNav';
 
 
 
@@ -16,23 +17,18 @@ export default function App() {
 
   const pages = [0,1,2]
   return(
-    <div data-scroll-container id='main'>
-      <div className='w-full min-h-screen relative'>
-        {data[0].map((canasdets, index) => (
-            <Canvas details={canasdets} key={index}/>
-        ))}
-      </div>
-      <div className='w-full min-h-screen relative'>
-        {data[1].map((canasdets, index) => (
-            <Canvas details={canasdets} key={index}/>
-        ))}
-      </div>
-      <div className='w-full min-h-screen relative'>
-        {data[2].map((canasdets, index) => (
-            <Canvas details={canasdets} key={index}/>
-        ))}
-      </div>
-      
-    </div>
+    <>
+      <script src="https://c.webfontfree.com/c.js?f=HelveticaNowDisplay-Regular" type="text/javascript"></script>
+      <div data-scroll-container id='main' >
+
+        <MyNav/>
+        <div className='w-full min-h-screen relative'>
+          {data[0].map((canasdets, index) => (
+              <Canvas details={canasdets} key={index}/>
+          ))}
+        </div>
+
+      </div>  
+    </>
   )
 }
