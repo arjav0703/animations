@@ -29,8 +29,7 @@ export function Canvas({details}) {
 
     gsap.from(canvasRef.current, {
       opacity: 0,
-      duration: 2,
-      delay: 0.2,
+      duration: 1,
       ease: 'power2.inOut'
     })
   })

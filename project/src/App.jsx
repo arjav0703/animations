@@ -4,29 +4,75 @@ import { Canvas } from './canvas'
 import data from './data'
 import LocomotiveScroll from 'locomotive-scroll';
 import MyNav from './components/MyNav';
-
+import gsap from 'gsap'
 
 
 export default function App() {
-  
-  const [showCanvas, setShowCanvs] = useState(false)
+  const [showCanvas, setShowCanvas] = useState(false)
   const canvastoggle = useRef(null)
+  const growingSpan = useRef(null)
 
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
+    const locomotiveScroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true
-    }, []);
-    
-    canvastoggle.current.addEventListener('click', () => {
-      setShowCanvs(!showCanvas)
-    })
-  }
-  ,[showCanvas]);
+    });
+  }, []);
+
+  useEffect(() => {
+    const handleClick = (cl) => {
+      setShowCanvas((prevShowCanvas) => {
+        if (!prevShowCanvas) {
+          gsap.set(growingSpan.current, {
+            top: cl.clientY,
+            left: cl.clientX,
+          });
+
+          gsap.to("body", {
+            color: "#000",
+            backgroundColor: "#fd2c2a",
+            duration: 1.2,
+            ease: "power2.inOut",
+          });
+
+          gsap.to(growingSpan.current, {
+            scale: 1000,
+            duration: 2,
+            ease: "power2.inOut",
+            onComplete: () => {
+              gsap.set(growingSpan.current, {
+                scale: 0,
+                clearProps: "all",
+              });
+            },
+          });
+        } else {
+          gsap.to("body", {
+            color: "#fff",
+            backgroundColor: "#000",
+            duration: 1.2,
+            ease: "power2.inOut",
+          });
+        }
+
+        return !prevShowCanvas;
+      });
+    };
+
+    const headingElement = canvastoggle.current;
+    headingElement.addEventListener("click", handleClick);
+
+    // Clean up event listener on unmount
+    return () => headingElement.removeEventListener("click", handleClick);
+  }, []);
 
   const pages = [0,1,2]
   return(
     <>
+      <span
+        ref={growingSpan}
+        className="growing rounded-full block fixed top-[-20px] left-[-20px] w-5 h-5"
+      ></span>
       
       <div data-scroll-container id='main' >
 
