@@ -23,14 +23,21 @@ export default function App() {
 
       <section className="w-full z-[1]">
         <MyNav />
-        <div className='w-[25%] top-[15%] mx-[20%] leading-12 mt-10 absolute z-99'>
-          <h2 className='text-4xl'>
-            At Thirtysixstudio, we build digital assets and immersive experiences for purposeful brands.
-          </h2>
-          <p className='text-md leading-4 mt-10 para'>
-            We're a boutique production studio focused on design, animation, and technology, constantly rethinking what digital craft can do for present-day ads and campaigns.
-          </p>
+        <div className='w-full top-[15%] absolute z-99'>
+          <section className='w-[25%] mx-[20%] leading-12'>
+            <h2 className='text-4xl'>
+              At Thirtysixstudio, we build digital assets and immersive experiences for purposeful brands.
+            </h2>
+            <p className='text-md leading-4 mt-10 para'>
+              We're a boutique production studio focused on design, animation, and technology, constantly rethinking what digital craft can do for present-day ads and campaigns.
+            </p>
+          </section>
+
+          <section className='text-center mt-18 relative bottom-0 left-0'>
+            <h1 className="text-[12rem] tracking-tight leading-none">Thirtysixstudios</h1>
+          </section>
         </div>
+
       </section>
 
         <div className='w-full min-h-screen relative'>
