@@ -8,6 +8,9 @@ import MyNav from './components/MyNav';
 
 
 export default function App() {
+  
+  const [showCanvs, setShowCanvs] = useState(false)
+
   useEffect(() => {
     const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
@@ -41,7 +44,7 @@ export default function App() {
       </section>
 
         <div className='w-full min-h-screen relative'>
-          {data[0].map((canasdets, index) => (
+          {showCanvs && data[0].map((canasdets, index) => (
               <Canvas details={canasdets} key={index}/>
           ))}
         </div>
@@ -66,7 +69,7 @@ export default function App() {
               alt="image of a person with virtual reality glasses"
             />
           </section>
-          {data[1].map((canasdets, index) => (
+          {showCanvs && data[1].map((canasdets, index) => (
               <Canvas details={canasdets} key={index}/>
           ))}
         </div>
